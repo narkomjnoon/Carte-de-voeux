@@ -1,0 +1,702 @@
+
+body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/******************************* LOADER ***************************************/
+
+.mainSVG {
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    position: absolute;
+    z-index: 600;
+    background-color: #B7162A;
+   }  
+
+/******************************* BACKGROUND ***************************************/
+
+/****** GUI *******/
+
+#croix{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: auto;
+}
+#croix:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+#gui{
+  position: absolute;
+  width: 200px;
+  height: auto;
+  top: 2%;
+  left: 2%;
+  transform: rotate(130deg);
+  z-index: 300;
+}
+#gui:hover{
+  cursor: pointer;
+  transform: scale(1.2) rotate(130deg);
+  transition: .5s ease-in-out;
+}
+.opacity{
+  opacity: 1;
+  animation: apparition 3s ease-in-out;
+  top: 10%;
+  left: 5%;
+}
+
+@keyframes apparition{
+  100%{
+    width: 396px;
+    height: 604px;
+    transform: rotate(360deg);
+  }
+  0%{
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+.opacity2{
+  opacity: 0;
+  animation: disparition 3s ease-in-out;
+  top: 10%;
+  left: 5%;
+}
+@keyframes disparition{
+  100%{
+    height: 0px;
+    width: 0px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  0%{
+    opacity: 1;
+    width: 396px;
+    height: 604px;
+    transform: rotate(360deg);
+  }
+}
+form{
+  opacity: 0;
+}
+ .login-form {
+   position: absolute;
+   display: flex;
+   overflow: hidden;
+	 flex-direction: column;
+	 align-items: center;
+	 padding: 3em;
+	 color: white;
+	 background: rgba(0, 0, 0, 0.8);
+	 border-radius: 10px;
+	 box-shadow: 0 0.4px 0.6px rgba(0, 0, 0, 0.141), 
+     0 1px 1.3px rgba(0, 0, 0, 0.202), 
+     0 1.9px 2.5px rgba(0, 0, 0, 0.25), 
+     0 3.4px 4.5px rgba(0, 0, 0, 0.298), 
+     0 6.3px 8.4px rgba(0, 0, 0, 0.359), 
+     0 15px 20px rgba(0, 0, 0, 0.5);
+}
+h1 {
+	 margin-bottom: 0.3em;
+	 padding: 12px 0;
+   font-size: 2.5em;
+   font-family: 'mountains_of_christmasregular';
+}
+.form-field {
+	 position: relative;
+	 margin: 20px 0 8px 0;
+	 font-size: 20px;
+	 border-bottom: 1px solid white;
+   transition: 0.4s;
+   font-family: 'mountains_of_christmasregular';
+}
+.form-field::after {
+	 position: absolute;
+	 content: "";
+	 bottom: -1px;
+	 left: 0;
+	 width: 100%;
+	 height: 2px;
+	 background: #3498db;
+	 transform-origin: left;
+	 transform: scaleX(0);
+	 transition: 0.4s ease;
+}
+.form-field:focus-within::after {
+	 transform: scaleX(1);
+}
+ .login-form .form-field input {
+	 padding-left: 10px;
+	 color: white;
+	 background: transparent;
+	 border: none;
+	 outline: none;
+}
+.form-field input:focus ~ label, .form-field input:not(:placeholder-shown) ~ label {
+	 transform: translateY(-24px) scale(0.75);
+}
+.form-field input:valid ~ label {
+	 color: white;
+}
+.form-field input:invalid ~ label {
+	 color: #e74c3c;
+}
+.form-field label {
+	 position: absolute;
+	 left: 32px;
+	 top: 24px;
+	 transform-origin: left;
+	 transition: 0.4s;
+}
+.btn {
+   display: inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+	min-width:100px;
+	padding: 22px 33px;
+  font-family: 'mountains_of_christmasregular';
+  font-size: 30px;
+  font-weight: bolder;
+	line-height: 26px;
+	text-decoration: none;
+	color: #FFF;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.75);
+	background:  url(http://recueil-de-png.r.e.pic.centerblog.net/aa2cf60d.png) #5e0d0c;
+	outline: none;
+	border-radius: 15px;
+	border: 1px solid #4c0300;
+	position: relative;
+	overflow: hidden; /* IE9 & 10 */
+	-webkit-transition: 500ms linear;
+	   -moz-transition: 500ms linear;
+	     -o-transition: 500ms linear;
+					transition: 500ms linear;
+}
+.btn::before {
+   content: '';
+	display: block;
+	position: absolute;
+	top: -7px;
+	left: -3px;
+	right: 0;
+	height: 23px;
+}
+.btn:hover {
+   /* box-shadow: 0 0 20px 10px rgba(51, 152, 219, 0.5); */
+   background:url(http://recueil-de-png.r.e.pic.centerblog.net/aa2cf60d.png) #a61715;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.75), 0 0 40px #FFF;
+	box-shadow:
+		inset 1px 1px 0px rgba(255,255,255,0.25), /* highlight */
+		inset 0 0 6px #da3b2c, /* inner glow */
+		inset 0 80px 80px -40px #dd4330, /* gradient */
+    1px 1px 3px rgba(0,0,0,0.75); /* shadow */
+    cursor: pointer;
+}
+.btn:focus {
+	outline: none; /*FF*/
+}
+ 
+/****** ANIMATION *******/
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:1;
+    }
+    50%{
+        opacity:0;
+    }
+}
+@keyframes snowfall{
+    0%{
+        transform:translate(0px,0px);
+        opacity:1;
+   }
+
+    100%{
+        opacity:0;
+        transform: translate(80px, 150px) ;
+    }
+}
+@keyframes lightson{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+@keyframes dimlight{
+    0%, 100%{opacity:1;}
+    50%{opacity:0.95;}
+}
+@keyframes sleighpath{
+    0%{
+        opacity:0 ;
+        transform:translate(-3000px,1000px);
+    }
+    30%{
+        opacity:1 ;
+        transform:translate(0,0px);
+    }
+    31%{
+        opacity:1;
+        transform:translate(0px,0px) ;
+    }
+    35%{
+        opacity:1 ;
+        transform:translate(0,-5px);
+    }
+    40%{
+        opacity:1 ;
+        transform:translate(0,5px);
+    }
+    45%{
+        opacity:1 ;
+        transform:translate(0,0);
+    }
+    50%{
+        opacity:1 ;
+        transform:translate(0,5px);
+    }
+    55%{
+        opacity:1 ;
+        transform:translate(0,0);
+    }
+    60%{
+        opacity:1 ;
+        transform:translate(0,5px);
+    }
+    65%{
+        opacity:1 ;
+        transform:translate(0,0);
+    }
+    70%{
+        opacity:1 ;
+        transform:translate(0,5px);
+    }
+    75%{
+        opacity:1 ;
+        transform:translate(0,0);
+    }
+    80%{
+        opacity:1 ;
+        transform:translate(0,0);
+    }
+    100%{
+        opacity:0 ;
+        transform:translate(3000px,-1000px);
+    }
+}
+
+/****** LUNE *******/
+
+#Layer_15, #OBJECTS{
+        opacity:0;
+        animation: lightson 1s ease 5s forwards;
+}
+
+/****** ETOILE *******/
+
+#star1{
+    animation: twinkle 2s ease infinite ;
+}
+#star2{
+    animation: twinkle 4s ease 1s infinite ;
+}
+#star3{
+    animation: twinkle 4s ease 0.5s infinite ;
+}
+#star4{
+    animation: twinkle 3s ease 2s infinite ;
+}
+
+/****** TRAINEAU *******/
+
+#sleigh{
+    opacity:0;
+    animation: sleighpath 10s ease 1s forwards  ;
+}
+
+/****** NEIGE *******/
+
+#snow1{
+    animation: snowfall 5s infinite;
+}
+#snow2{
+    animation: snowfall 6s  0.25s infinite;
+}
+#snow3{
+    animation: snowfall 7s  0.5s infinite;
+}
+#snow4{
+    animation: snowfall 8s  1s infinite;
+}
+#snow5{
+    animation: snowfall 10s 1.25s infinite ;
+}
+#snow6{
+    animation: snowfall 5.5s 1.5s infinite ;
+}
+#snow7{
+    animation: snowfall 6.5s  0.4s infinite;
+}
+#snow8{
+    animation: snowfall 7.5s 1s infinite ;
+}
+#snow9{
+    animation: snowfall 8.5s 0.5s infinite ;
+}
+#snow10{
+    animation: snowfall 9.5s 1s infinite ;
+}
+#snow11{
+    animation: snowfall 10.5s 0.25s infinite ;
+}
+.container-svg{
+width:100%;
+overflow:hidden;
+}
+@media screen and (max-width:700px){
+.container-svg{
+text-align:center ;
+height: 100vh ;
+}
+.container-svg > svg{
+height:100vh;
+}
+}
+
+/*******************************CARTE ***************************************/
+
+.card {
+    -webkit-perspective: 1500px;
+    perspective: 1000px;
+    position: absolute;
+    left: calc(50% - 175px);
+    top: calc(50% - 250px);
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition-delay: initial;
+    -webkit-transform: rotate(-10deg) translate(0, 0);
+    transform: rotate(-10deg) translate(0, 0);
+    -webkit-animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+    animation: cardIn 1s alternate cubic-bezier(0.87, -0.41, 0.19, 1.44);
+  }
+  @media (max-width: 767px) {
+    .card {
+      left: calc(50% - 115px);
+      top: calc(50% - 164.5px);
+    }
+  }
+  @media (max-width: 479px) {
+    .card {
+      left: calc(50% - 75px);
+      top: calc(50% - 107px);
+    }
+  }
+  .card:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 50px #000;
+    transition: all 0.5s ease-in-out;
+    margin-top: 20%;
+  }
+
+/****** CARTE OUVERTE *******/
+
+  .card.is-opened {
+    -webkit-transform: rotate(0deg) translate(175px, 0);
+    transform: rotate(0deg) translate(175px, 0);
+  }
+  @media (max-width: 767px) {
+    .card.is-opened {
+      -webkit-transform: rotate(0deg) translate(115px, 0);
+      transform: rotate(0deg) translate(115px, 0);
+    }
+  }
+  @media (max-width: 479px) {
+    .card.is-opened {
+      -webkit-transform: rotate(0deg) translate(75px, 0);
+      transform: rotate(0deg) translate(75px, 0);
+    }
+  }
+  .card.is-opened .cart-page-front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  
+  @-webkit-keyframes cardIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: rotate(-10deg) translate(0, -100%);
+      transform: rotate(-10deg) translate(0, -100%);
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: rotate(-10deg) translate(0, 0);
+      transform: rotate(-10deg) translate(0, 0);
+    }
+  }
+  
+  @keyframes cardIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: rotate(-10deg) translate(0, -100%);
+      transform: rotate(-10deg) translate(0, -100%);
+    }
+    25% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: rotate(-10deg) translate(0, 0);
+      transform: rotate(-10deg) translate(0, 0);
+    }
+  }
+
+  /****** PAGE CACHER *******/
+
+  .card,
+  .card-page {
+    width: 250px;
+    height: 400px;
+    margin-top: 10%;
+  }
+  @media (max-width: 767px) {
+    .card,
+    .card-page {
+      width: 230px;
+      height: 329px;
+    }
+  }
+  @media (max-width: 479px) {
+    .card,
+    .card-page {
+      width: 150px;
+      height: 214px;
+    }
+  }
+  
+  .card-page {
+    transition: transform 2s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    outline: 1px solid transparent;
+  }
+  
+/****** COUVERTURE *******/
+
+  .cart-page-front {
+    -webkit-transform-origin: 0 50% 0;
+    transform-origin: 0 50% 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateY(-20deg);
+    transform: rotateY(-20deg);
+    z-index: 2;
+    margin-top: 10%;
+  }
+  
+  .cart-page-outside,
+  .cart-page-inside {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+  }
+  
+/****** EXXTERIEUR PAGE *******/
+
+
+  .cart-page-outside {
+    border: 10px solid #fbfbfb;
+    background: #B7162A url("https://www.dropbox.com/s/xsgg2exs2oparkm/front-bg.png?raw=1") no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 767px) {
+    .cart-page-outside {
+      border: 5px solid #fbfbfb;
+    }
+  }
+  
+  .cart-page-inside,
+  .cart-page-bottom {
+    background-color: #d4d1d0;
+    background-image: url("https://www.dropbox.com/s/8hw7guch8d151kg/pattern.png?raw=1");
+    border: 20px solid #d4d1d0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -moz-flex;
+    display: flex;
+    box-pack: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    box-align: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
+    text-align: center;
+  }
+  @media (max-width: 767px) {
+    .cart-page-inside,
+    .cart-page-bottom {
+      border: 10px solid #d4d1d0;
+    }
+  }
+  
+  .cart-page-inside {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    border-right: none !important;
+    background-position: 0px 80px;
+  }
+  @media (max-width: 767px) {
+    .cart-page-inside {
+      background-position: 0px 30px;
+    }
+  }
+  @media (max-width: 479px) {
+    .cart-page-inside {
+      background-position: 0px 30px;
+    }
+  }
+  
+  .cart-page-bottom {
+    z-index: 1;
+    border-left: none !important;
+    background-position: -22px 80px;
+    margin-top: 20%;
+  }
+  @media (max-width: 767px) {
+    .cart-page-bottom {
+      background-position: 85px 30px;
+    }
+  }
+  @media (max-width: 479px) {
+    .cart-page-bottom {
+      background-position: 0px 30px;
+    }
+  }
+  
+/****** PAGE GAUCHE (MERRY CHRISTMAS) *******/
+
+
+  .merry-christmas {
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+  }
+  .merry-christmas svg {
+    width: 350px;
+    height: auto;
+  }
+  @media (max-width: 767px) {
+    .merry-christmas svg {
+      width: 200px;
+    }
+  }
+  @media (max-width: 479px) {
+    .merry-christmas svg {
+      width: 150px;
+    }
+  }
+  
+/****** MAIN DE CLIQUE *******/
+
+  .click-icon {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    bottom: 20px;
+    -webkit-animation: iconAnimation 1s infinite alternate ease-in-out;
+    animation: iconAnimation 1s infinite alternate ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+  .click-icon svg {
+    width: 96px;
+    height: 96px;
+  }
+  @media (max-width: 767px) {
+    .click-icon svg {
+      width: 72px;
+      height: 72px;
+    }
+  }
+  @media (max-width: 479px) {
+    .click-icon svg {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  .click-icon.is-hidden {
+    opacity: 0;
+  }
+  
+  @-webkit-keyframes iconAnimation {
+    0% {
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    100% {
+      -webkit-transform: translate(-50%, 10px);
+      transform: translate(-50%, 10px);
+    }
+  }
+  
+  @keyframes iconAnimation {
+    0% {
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+    }
+    100% {
+      -webkit-transform: translate(-50%, 10px);
+      transform: translate(-50%, 10px);
+    }
+  }
+
+/****** MESSAGE PERSONNALISE *******/
+
+  p {
+    font-family: 'mountains_of_christmasregular';
+    font-size: 36px;
+    line-height: 1.2em;
+    padding-left: 10px;
+  }
+  @media (max-width: 767px) {
+    p {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 479px) {
+    p {
+      font-size: 20px;
+    }
+  }
+  
